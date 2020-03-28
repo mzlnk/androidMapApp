@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.DetailsScreen">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textIsSelectable="true"
+        app:layout_constraintBaseline_toBaselineOf="@+id/name_const"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/name_const" />
+
+    <TextView
+        android:id="@+id/name_const"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/name_const"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:text="@string/close_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rateButton" />
+
+    <TextView
+        android:id="@+id/address_const"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/address_const"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_const" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:autoLink="map"
+        android:gravity="center_vertical"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textIsSelectable="true"
+        app:layout_constraintBaseline_toBaselineOf="@+id/address_const"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/address_const" />
+
+    <TextView
+        android:id="@+id/kinds_conts"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/kinds_const"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address_const" />
+
+    <TextView
+        android:id="@+id/kinds"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textIsSelectable="true"
+        app:layout_constraintBaseline_toBaselineOf="@+id/kinds_conts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/kinds_conts" />
+
+    <TextView
+        android:id="@+id/review_count_const"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:text="@string/review_count"
+        android:textColor="#000000"
+        android:textIsSelectable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_const" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:stepSize="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/review_const" />
+
+    <TextView
+        android:id="@+id/reviewCount"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textIsSelectable="true"
+        app:layout_constraintBaseline_toBaselineOf="@+id/review_count_const"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toEndOf="@+id/review_count_const" />
+
+    <Button
+        android:id="@+id/rateButton"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:onClick="rateClick"
+        android:text="@string/rateButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+    <TextView
+        android:id="@+id/review_const"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/rewiew"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/review_count_const" />
+
+    <TextView
+        android:id="@+id/info_const"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:text="@string/info_const"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kinds_conts" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textIsSelectable="true"
+        app:layout_constraintBaseline_toBaselineOf="@+id/info_const"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toEndOf="@+id/info_const" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
