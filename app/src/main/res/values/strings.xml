@@ -15,7 +15,7 @@
     <string name="menu_profile">profile</string>
 
     <string name="title_label_hospitals">Szpitale</string>
-    <string name="title_label_hospital_wards">Oddziały</string>
+    <string name="title_label_hospital_wards">Oddziały szpitalne</string>
     <string name="title_label_hospital_stays">Pobyty w szpitalu</string>
     <string name="title_label_hospital_details">Szczegółowe informacje</string>
     <string name="title_label_hospital_ward_details">Szczegółowe informacje</string>

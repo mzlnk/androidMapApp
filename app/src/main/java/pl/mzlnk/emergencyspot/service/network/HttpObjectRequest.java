@@ -1,5 +1,7 @@
 package pl.mzlnk.emergencyspot.service.network;
 
+import android.util.Log;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
@@ -57,6 +59,9 @@ public class HttpObjectRequest<T> extends Request<T> {
             String json = new String(
                     response.data,
                     HttpHeaderParser.parseCharset(response.headers));
+
+            Log.d("network", "json response:\n" + json);
+
             return Response.success(
                     gson.fromJson(json, clazz),
                     HttpHeaderParser.parseCacheHeaders(response));
