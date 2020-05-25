@@ -1,0 +1,21 @@
+<resources>
+
+    <attr name="label" format="reference" />
+    <attr name="icon" format="reference" />
+    <attr name="iconSize" format="dimension" />
+    <attr name="labelSize" format="dimension" />
+    <attr name="title" format="reference" />
+    <attr name="description" format="reference" />
+    <attr name="buttonLabel" format="reference" />
+
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MenuItem">
+        <attr name="label" />
+        <attr name="icon" />
+    </declare-styleable>
+
+</resources>
