@@ -12,6 +12,6 @@ public class HospitalWardDetailsDto {
     private Long capacity;
     private Long currentPatients;
 
-    private Double averageReview;
+    private Double averageRating;
 
 }

@@ -18,4 +18,11 @@
         <attr name="icon" />
     </declare-styleable>
 
+    <declare-styleable name="NoIconButton">
+        <attr name="label" />
+        <attr name="labelSize" />
+    </declare-styleable>
+
+    <attr name="ListItemViewStyle" format="reference" />
+
 </resources>

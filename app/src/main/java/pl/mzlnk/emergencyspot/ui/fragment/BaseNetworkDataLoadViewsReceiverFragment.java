@@ -29,7 +29,12 @@ public abstract class BaseNetworkDataLoadViewsReceiverFragment<T, K, V> extends 
         startTask(task);
     }
 
-    protected void startTask(LoadViewsTask<T> task) {
+    @Override
+    public void onDataReceivedFromNetwork(T data) {
+
+    }
+
+    protected final void startTask(LoadViewsTask<T> task) {
         cancelTask();
 
         HttpRequestParams params = httpRequestParams();
@@ -40,6 +45,7 @@ public abstract class BaseNetworkDataLoadViewsReceiverFragment<T, K, V> extends 
                     data -> {
                         this.task = task;
                         runTask(data);
+                        this.onDataReceivedFromNetwork(data);
                     },
                     error -> Toast.makeText(getContext(), "Could not retrieve data from server", Toast.LENGTH_SHORT).show(),
                     app.userService.getAuthUser()
@@ -51,9 +57,10 @@ public abstract class BaseNetworkDataLoadViewsReceiverFragment<T, K, V> extends 
                     data -> {
                         this.task = task;
                         runTask(data);
+                        this.onDataReceivedFromNetwork(data);
                     },
-                    error -> Toast.makeText(getContext(), "Could not retrieve data from server,", Toast.LENGTH_SHORT).show(),
-                    );
+                    error -> Toast.makeText(getContext(), "Could not retrieve data from server,", Toast.LENGTH_SHORT).show()
+            );
         }
     }
 

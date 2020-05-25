@@ -6,5 +6,6 @@ public interface NetworkDataReceiver<T> {
 
     HttpRequestParams httpRequestParams();
     Class<T> receivedDataClass();
+    void onDataReceivedFromNetwork(T data);
 
 }
