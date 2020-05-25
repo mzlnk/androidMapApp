@@ -5,6 +5,7 @@ import android.os.SystemClock;
 import android.view.View;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 
@@ -22,9 +23,9 @@ public abstract class BaseLoadViewsTask<T, K, V extends View> extends AsyncTask<
     private BiConsumer<K, V> onLoadFinishedAction;
     private Map<K, V> items = new HashMap<>();
 
-    private T data;
+    private List<T> data;
 
-    BaseLoadViewsTask(LoadViewsTaskReceiver<K, V> receiver) {
+    BaseLoadViewsTask(LoadViewsTaskReceiver<T, K, V> receiver) {
         this.resources = LoadViewsTaskOptional.of(
                 receiver.getActivity(),
                 receiver.getContainer(),
@@ -47,7 +48,7 @@ public abstract class BaseLoadViewsTask<T, K, V extends View> extends AsyncTask<
     }
 
     @Override
-    public final void executeTask(T data) {
+    public final void executeTask(List<T> data) {
         this.data = data;
 
         super.executeOnExecutor(THREAD_POOL_EXECUTOR);

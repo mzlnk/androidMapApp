@@ -11,6 +11,6 @@ import java.util.Map;
 
 public interface ViewProvider<T, K, V extends View> {
 
-    List<Map.Entry<K, V>> provide(T data, Context context, @Nullable FragmentManager fragmentManager);
+    List<Map.Entry<K, V>> provide(List<T> data, Context context, @Nullable FragmentManager fragmentManager);
 
 }

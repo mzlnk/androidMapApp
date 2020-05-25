@@ -17,6 +17,13 @@ public class EmergencySpotApplication extends Application {
         super.onCreate();
 
         app = this;
+
+        createContext();
+    }
+
+    private void createContext() {
+        this.networkService = NetworkService.init(this);
+        this.userService = UserService.init();
     }
 
 }

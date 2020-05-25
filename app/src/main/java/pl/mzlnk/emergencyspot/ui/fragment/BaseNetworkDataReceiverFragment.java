@@ -18,19 +18,17 @@ public abstract class BaseNetworkDataReceiverFragment<T> extends BaseFragment im
     }
 
     private void retrieveNetworkData() {
-        HttpRequestParams params = httpRequestParams();
+        HttpRequestParams<T> params = httpRequestParams();
         if (params.isAuthorized()) {
-            app.networkService.makeAuthorizedRequest(
+            app.networkService.makeAuthorizedRequestForObject(
                     params,
-                    receivedDataClass(),
                     this::onDataReceivedFromNetwork,
                     error -> Toast.makeText(getContext(), "Could not retrieve data from server", Toast.LENGTH_SHORT).show(),
                     app.userService.getAuthUser()
             );
         } else {
-            app.networkService.makeRequest(
+            app.networkService.makeRequestForObject(
                     params,
-                    receivedDataClass(),
                     this::onDataReceivedFromNetwork,
                     error -> Toast.makeText(getContext(), "Could not retrieve data from server,", Toast.LENGTH_SHORT).show()
             );

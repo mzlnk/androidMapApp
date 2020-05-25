@@ -25,9 +25,8 @@ public class UserService {
     }
 
     public void signIn(String username, String password) {
-        app.networkService.makeRequest(
+        app.networkService.makeRequestForObject(
                 new UserSignInHttpRequestParams(),
-                AuthUserDto.class,
                 authUser -> {
                     this.authUser = authUser;
                 },

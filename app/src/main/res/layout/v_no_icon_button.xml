@@ -4,14 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@drawable/d_item_view_bg" >
+    android:background="@drawable/d_button_bg" >
 
     <TextView
         android:id="@+id/v_no_icon_button_text_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="11sp"
-        android:textColor="#ffffff"
         android:fontFamily="@font/questrial_regular_pl"
         android:textAllCaps="false"
         android:gravity="center" />

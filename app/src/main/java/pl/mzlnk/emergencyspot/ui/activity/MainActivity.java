@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.a_main_fragment_container, fragment)
                 .commit();
-
-        new JsonObjectRequest(Request.Method.GET, "", )
     }
 
 }

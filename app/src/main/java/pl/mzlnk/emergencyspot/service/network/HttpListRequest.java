@@ -10,33 +10,34 @@ import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Type;
+import java.util.List;
 import java.util.Map;
 
 import pl.mzlnk.emergencyspot.service.network.requests.HttpRequestParams;
 
-public class HttpRequest<T> extends Request<T> {
+public class HttpListRequest<T> extends Request<List<T>> {
 
-    private final Class<T> clazz;
-    private final Response.Listener<T> onSuccessListener;
+    private final Type listType;
+    private final Response.Listener<List<T>> onSuccessListener;
 
     private final Map<String, String> headers;
 
-    public HttpRequest(HttpRequestParams requestParams,
-                       Class<T> clazz,
-                       Response.Listener<T> onSuccessListener,
-                       Response.ErrorListener onErrorListener) {
-        this(requestParams, clazz, onSuccessListener, onErrorListener, null);
+
+    public HttpListRequest(HttpRequestParams<T> requestParams,
+                           Response.Listener<List<T>> onSuccessListener,
+                           Response.ErrorListener onErrorListener) {
+        this(requestParams, onSuccessListener, onErrorListener, null);
     }
 
-    public HttpRequest(HttpRequestParams requestParams,
-                        Class<T> clazz,
-                        Response.Listener<T> onSuccessListener,
-                        Response.ErrorListener onErrorListener,
-                        Map<String, String> headers) {
+    public HttpListRequest(HttpRequestParams<T> requestParams,
+                           Response.Listener<List<T>> onSuccessListener,
+                           Response.ErrorListener onErrorListener,
+                           Map<String, String> headers) {
 
         super(requestParams.getRequestMethod(), requestParams.getUrl(), onErrorListener);
 
-        this.clazz = clazz;
+        this.listType = requestParams.receivedDataTypeToken().getType();
         this.onSuccessListener = onSuccessListener;
         this.headers = headers;
     }
@@ -47,12 +48,12 @@ public class HttpRequest<T> extends Request<T> {
     }
 
     @Override
-    protected void deliverResponse(T response) {
+    protected void deliverResponse(List<T> response) {
         this.onSuccessListener.onResponse(response);
     }
 
     @Override
-    protected Response<T> parseNetworkResponse(NetworkResponse response) {
+    protected Response<List<T>> parseNetworkResponse(NetworkResponse response) {
         Gson gson = new Gson();
 
         try {
@@ -60,13 +61,12 @@ public class HttpRequest<T> extends Request<T> {
                     response.data,
                     HttpHeaderParser.parseCharset(response.headers));
             return Response.success(
-                    gson.fromJson(json, clazz),
+                    gson.fromJson(json, this.listType),
                     HttpHeaderParser.parseCacheHeaders(response));
-        } catch (UnsupportedEncodingException e) {
-            return Response.error(new ParseError(e));
-        } catch (JsonSyntaxException e) {
+        } catch (UnsupportedEncodingException | JsonSyntaxException e) {
             return Response.error(new ParseError(e));
         }
     }
+
 
 }

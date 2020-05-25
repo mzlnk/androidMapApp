@@ -1,8 +1,13 @@
 package pl.mzlnk.emergencyspot.service.network.requests;
 
+import com.google.gson.reflect.TypeToken;
+
 import org.json.JSONObject;
 
-public interface HttpRequestParams {
+import java.util.List;
+
+
+public interface HttpRequestParams<T> {
 
     int getRequestMethod();
 
@@ -11,5 +16,9 @@ public interface HttpRequestParams {
     JSONObject getRequestBody();
 
     boolean isAuthorized();
+
+    Class<T> receivedDataClass();
+
+    TypeToken<List<T>> receivedDataTypeToken();
 
 }

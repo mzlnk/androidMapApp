@@ -1,6 +1,9 @@
 package pl.mzlnk.emergencyspot.service.network.requests;
 
-public class UserSignInHttpRequestParams extends BaseHttpRequestParams {
+import pl.mzlnk.emergencyspot.model.user.AuthUserDto;
+
+public class UserSignInHttpRequestParams extends BaseHttpRequestParams<AuthUserDto> {
+
     @Override
     public int getRequestMethod() {
         return 0;
