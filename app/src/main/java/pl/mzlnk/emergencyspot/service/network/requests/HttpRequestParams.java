@@ -10,4 +10,6 @@ public interface HttpRequestParams {
 
     JSONObject getRequestBody();
 
+    boolean isAuthorized();
+
 }
