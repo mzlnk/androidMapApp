@@ -23,7 +23,7 @@ public class UserSignInHttpRequestParams extends BaseHttpRequestParams<AuthUserD
 
     @Override
     public String getUrl() {
-        return "http://192.168.0.21:5000/token/generate";
+        return super.getUrl() + "/token/generate";
     }
 
     @Override

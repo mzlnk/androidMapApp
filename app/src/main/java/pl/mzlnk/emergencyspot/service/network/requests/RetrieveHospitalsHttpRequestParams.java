@@ -25,7 +25,7 @@ public class RetrieveHospitalsHttpRequestParams extends BaseHttpRequestParams<Ho
     public String getUrl() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("http://192.168.0.21:5000/hospitals?");
+        sb.append("/hospitals?");
 
         if (hospitalParams.getName() != null) {
             sb.append("name=")
@@ -67,7 +67,7 @@ public class RetrieveHospitalsHttpRequestParams extends BaseHttpRequestParams<Ho
                     );
         }
 
-        return sb.toString();
+        return super.getUrl() + sb.toString();
     }
 
     @Override

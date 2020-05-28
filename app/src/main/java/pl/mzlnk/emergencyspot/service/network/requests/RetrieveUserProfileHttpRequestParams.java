@@ -13,7 +13,7 @@ public class RetrieveUserProfileHttpRequestParams extends BaseHttpRequestParams<
 
     @Override
     public String getUrl() {
-        return "http://192.168.0.21:5000/users/me";
+        return super.getUrl() + "/users/me";
     }
 
     @Override

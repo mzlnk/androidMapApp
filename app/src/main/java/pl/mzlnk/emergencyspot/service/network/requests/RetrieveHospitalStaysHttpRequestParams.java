@@ -15,7 +15,7 @@ public class RetrieveHospitalStaysHttpRequestParams extends BaseHttpRequestParam
 
     @Override
     public String getUrl() {
-        return "http://192.168.0.21:5000/stays/me";
+        return super.getUrl() + "/stays/me";
     }
 
     @Override
