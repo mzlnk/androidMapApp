@@ -58,7 +58,7 @@ public class HttpObjectRequest<T> extends Request<T> {
 
     @Override
     public byte[] getBody() {
-        return this.requestBody.getBytes();
+        return this.requestBody != null ? this.requestBody.getBytes() : null;
     }
 
     @Override

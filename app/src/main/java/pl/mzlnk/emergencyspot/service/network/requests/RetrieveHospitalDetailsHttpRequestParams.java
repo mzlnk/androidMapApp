@@ -1,14 +1,28 @@
 package pl.mzlnk.emergencyspot.service.network.requests;
 
-public class RetrieveHospitalDetailsHttpRequestParams extends BaseHttpRequestParams {
+import com.android.volley.Request;
+
+import lombok.AllArgsConstructor;
+import pl.mzlnk.emergencyspot.model.hospital.HospitalDetailsDto;
+
+@AllArgsConstructor
+public class RetrieveHospitalDetailsHttpRequestParams extends BaseHttpRequestParams<HospitalDetailsDto> {
+
+    private Long hospitalId;
 
     @Override
     public int getRequestMethod() {
-        return 0;
+        return Request.Method.GET;
     }
 
     @Override
     public String getUrl() {
-        return null;
+        return "http://192.168.0.21:5000/hospitals/" + hospitalId;
     }
+
+    @Override
+    public Class<HospitalDetailsDto> receivedDataClass() {
+        return HospitalDetailsDto.class;
+    }
+
 }

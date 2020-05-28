@@ -37,7 +37,7 @@ public class NetworkService {
 
         HttpObjectRequest<T> objectRequest = new HttpObjectRequest<T>(requestParams, onSuccessListener, errorListener);
         Log.d("network", "content-type: " + objectRequest.getBodyContentType());
-        Log.d("network", "request-body: " + new String(objectRequest.getBody()));
+        Log.d("network", "request-body: " + Optional.ofNullable(objectRequest.getBody()).map(String::new).orElse("null"));
 
         requestQueue.add(objectRequest);
     }

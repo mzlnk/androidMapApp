@@ -16,64 +16,74 @@
         android:layout_weight="0"
         app:label="@string/title_label_profile_overview" />
 
-    <TextView
-        android:id="@+id/f_profile_overview_text_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="@font/questrial_regular_pl"
-        android:textSize="25sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="nazwa użytkownika"
-        android:fontFamily="@font/questrial_regular_pl"
-        android:layout_marginTop="10dp"
-        android:textSize="13sp" />
+        <TextView
+            android:id="@+id/f_profile_overview_text_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/questrial_regular_pl"
+            android:textSize="25sp" />
 
-    <TextView
-        android:id="@+id/f_profile_overview_text_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/questrial_regular_pl"
-        android:textSize="25sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="nazwa użytkownika"
+            android:fontFamily="@font/questrial_regular_pl"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="imię i nazwisko"
-        android:fontFamily="@font/questrial_regular_pl"
-        android:layout_marginTop="10dp"
-        android:textSize="13sp" />
+        <TextView
+            android:id="@+id/f_profile_overview_text_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/questrial_regular_pl"
+            android:textSize="25sp" />
 
-    <TextView
-        android:id="@+id/f_profile_overview_text_pesel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/questrial_regular_pl"
-        android:textSize="25sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="imię i nazwisko"
+            android:fontFamily="@font/questrial_regular_pl"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="PESEL"
-        android:fontFamily="@font/questrial_regular_pl"
-        android:layout_marginTop="10dp"
-        android:textSize="13sp" />
+        <TextView
+            android:id="@+id/f_profile_overview_text_pesel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/questrial_regular_pl"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="PESEL"
+            android:fontFamily="@font/questrial_regular_pl"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp" />
+
+    </LinearLayout>
 
     <pl.mzlnk.emergencyspot.ui.view.button.NoIconButton
         android:id="@+id/f_profile_overview_sign_out"
         android:layout_width="140dp"
         android:layout_height="35dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="30dp"
         app:label="@string/btn_sign_out"
         app:labelSize="11dp" />
 

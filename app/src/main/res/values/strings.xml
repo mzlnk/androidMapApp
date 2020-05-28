@@ -17,6 +17,7 @@
 
     <string name="btn_sign_in">Zaloguj się</string>
     <string name="btn_sign_out">Wyloguj się</string>
+    <string name="btn_wards_list">lista oddziałów</string>
 
     <string name="title_label_hospitals">Szpitale</string>
     <string name="title_label_hospital_wards">Oddziały szpitalne</string>
