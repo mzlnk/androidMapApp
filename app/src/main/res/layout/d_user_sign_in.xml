@@ -38,7 +38,7 @@
         android:layout_width="140dp"
         android:layout_height="35dp"
         android:layout_marginTop="70dp"
-        app:label="@string/d_user_sign_in_btn_label"
+        app:label="@string/btn_sign_in"
         app:labelSize="11dp" />
 
 </LinearLayout>

@@ -1,5 +1,11 @@
 package pl.mzlnk.emergencyspot.service.user;
 
+import android.util.Log;
+
+import com.android.volley.VolleyError;
+
+import java.util.function.Consumer;
+
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import pl.mzlnk.emergencyspot.model.user.AuthUserDto;
@@ -24,20 +30,21 @@ public class UserService {
         return authUser != null;
     }
 
-    public void signIn(String username, String password) {
+    public void signIn(String username, String password, Consumer<AuthUserDto> onSuccessListener, Consumer<VolleyError> onErrorListener) {
         app.networkService.makeRequestForObject(
                 new UserSignInHttpRequestParams(username, password),
                 authUser -> {
                     this.authUser = authUser;
+                    Log.d("user-service", "auth user: " + authUser);
+                    onSuccessListener.accept(authUser);
                 },
-                error -> {
-                    throw new RuntimeException("Could not sign in. Error: " + error);
-                }
+                onErrorListener::accept
         );
     }
 
-    public void signOut() {
+    public void signOut(Runnable onSignOutListener) {
         this.authUser = null;
+        onSignOutListener.run();
     }
 
 }

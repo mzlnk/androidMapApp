@@ -15,15 +15,18 @@
     <string name="menu_hospital_stay">stays</string>
     <string name="menu_profile">profile</string>
 
+    <string name="btn_sign_in">Zaloguj się</string>
+    <string name="btn_sign_out">Wyloguj się</string>
+
     <string name="title_label_hospitals">Szpitale</string>
     <string name="title_label_hospital_wards">Oddziały szpitalne</string>
     <string name="title_label_hospital_stays">Pobyty w szpitalu</string>
     <string name="title_label_hospital_details">Szczegółowe informacje</string>
     <string name="title_label_hospital_ward_details">Szczegółowe informacje</string>
     <string name="title_label_hospital_stay_details">Szczegółowe informacje</string>
+    <string name="title_label_profile_overview">Twój profil</string>
 
     <string name="d_user_sign_in_title">Zaloguj się</string>
-    <string name="d_user_sign_in_btn_label">Zaloguj się</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -10,9 +10,11 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import lombok.SneakyThrows;
 import pl.mzlnk.emergencyspot.model.user.AuthUserDto;
 import pl.mzlnk.emergencyspot.service.network.requests.HttpRequestParams;
 
@@ -46,7 +48,7 @@ public class NetworkService {
                                                    AuthUserDto authUser) {
 
         Map<String, String> headers = new HashMap<>();
-        headers.put("Authorization", "Bearer: " + authUser.getToken());
+        headers.put("Authorization", "Bearer " + authUser.getToken());
 
         HttpObjectRequest<T> objectRequest = new HttpObjectRequest<>(requestParams, onSuccessListener, errorListener, headers);
         Log.d("network", "content-type: " + objectRequest.getBodyContentType());
@@ -64,16 +66,19 @@ public class NetworkService {
         requestQueue.add(listRequest);
     }
 
+    @SneakyThrows
     public <T> void makeAuthorizedRequestForList(HttpRequestParams<T> requestParams,
                                                  Response.Listener<List<T>> onSuccessListener,
                                                  Response.ErrorListener errorListener,
                                                  AuthUserDto authUser) {
 
         Map<String, String> headers = new HashMap<>();
-        headers.put("Authorization", "Bearer: " + authUser.getToken());
+        Log.d("network", "attaching token: " + Optional.ofNullable(authUser.getToken()).orElse("null!"));
+        headers.put("Authorization", "Bearer " + authUser.getToken());
 
         HttpListRequest<T> listRequest = new HttpListRequest<>(requestParams, onSuccessListener, errorListener, headers);
         Log.d("network", "content-type: " + listRequest.getBodyContentType());
+        Log.d("network", "auth header: " + listRequest.getHeaders().get("Authorization"));
 
         requestQueue.add(listRequest);
     }
