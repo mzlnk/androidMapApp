@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="280dp"
+    android:layout_height="400dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/d_dialog_bg">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/questrial_regular_pl"
+        android:textSize="18dp"
+        android:text="@string/d_hospitals_filter_title"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/d_hospitals_filter_input_city"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_marginTop="50dp"
+                android:hint="miasto" />
+
+            <EditText
+                android:id="@+id/d_hospitals_filter_input_country"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="kraj"
+                android:inputType="textPassword" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial_regular_pl"
+                android:textSize="15dp"
+                android:text="oddziały szpitalne"
+                android:textAlignment="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"/>
+
+            <HorizontalScrollView
+                android:layout_width="250dp"
+                android:layout_height="90dp">
+
+                <LinearLayout
+                    android:id="@+id/d_hospitals_filters_layout_filter_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" />
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+    <pl.mzlnk.emergencyspot.ui.view.button.NoIconButton
+        android:id="@+id/d_hospitals_filter_btn_submit"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="20dp"
+        app:label="@string/btn_apply"
+        app:labelSize="11dp" />
+
+
+</LinearLayout>

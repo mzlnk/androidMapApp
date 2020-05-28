@@ -20,7 +20,7 @@ public class RetrieveHospitalWardsHttpRequestParams extends BaseHttpRequestParam
 
     @Override
     public String getUrl() {
-        return "http://192.168.0.21:5000/wards?hospital=" + hospitalId;
+        return super.getUrl() + "/wards?hospital=" + hospitalId;
     }
 
     @Override

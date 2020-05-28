@@ -8,8 +8,11 @@ import java.util.List;
 
 public abstract class BaseHttpRequestParams<T> implements HttpRequestParams<T> {
 
+    private static final String HOST = "192.168.0.21";
+    private static final String PORT = "5000";
+
     @Override
-    public JSONObject getRequestBody() {
+    public String getRequestBody() {
         return null;
     }
 
@@ -28,4 +31,8 @@ public abstract class BaseHttpRequestParams<T> implements HttpRequestParams<T> {
         return null;
     }
 
+    @Override
+    public String getUrl() {
+        return String.format("http://%s:%s", HOST, PORT);
+    }
 }

@@ -19,7 +19,7 @@
         android:layout_width="70dp"
         android:layout_height="60dp"
         app:icon="@drawable/d_menu_item_hopsitals"
-        app:label="@string/menu_add_patient" />
+        app:label="@string/menu_hospitals" />
 
     <pl.mzlnk.emergencyspot.ui.view.menu.MenuItem
         android:id="@+id/v_menu_bar_menu_item_map"

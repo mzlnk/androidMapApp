@@ -9,12 +9,15 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Calendar;
 import java.util.Map;
 
 import pl.mzlnk.emergencyspot.service.network.requests.HttpRequestParams;
+import pl.mzlnk.emergencyspot.utils.gson.CalendarTypeAdapter;
 
 public class HttpObjectRequest<T> extends Request<T> {
 
@@ -22,6 +25,7 @@ public class HttpObjectRequest<T> extends Request<T> {
     private final Response.Listener<T> onSuccessListener;
 
     private final Map<String, String> headers;
+    private final String requestBody;
 
     public HttpObjectRequest(HttpRequestParams<T> requestParams,
                              Response.Listener<T> onSuccessListener,
@@ -39,11 +43,22 @@ public class HttpObjectRequest<T> extends Request<T> {
         this.clazz = requestParams.receivedDataClass();
         this.onSuccessListener = onSuccessListener;
         this.headers = headers;
+        this.requestBody = requestParams.getRequestBody();
     }
 
     @Override
     public Map<String, String> getHeaders() throws AuthFailureError {
         return headers != null ? headers : super.getHeaders();
+    }
+
+    @Override
+    public String getBodyContentType() {
+        return "application/json";
+    }
+
+    @Override
+    public byte[] getBody() {
+        return this.requestBody != null ? this.requestBody.getBytes() : null;
     }
 
     @Override
@@ -53,7 +68,9 @@ public class HttpObjectRequest<T> extends Request<T> {
 
     @Override
     protected Response<T> parseNetworkResponse(NetworkResponse response) {
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder()
+                .registerTypeHierarchyAdapter(Calendar.class, new CalendarTypeAdapter())
+                .create();
 
         try {
             String json = new String(

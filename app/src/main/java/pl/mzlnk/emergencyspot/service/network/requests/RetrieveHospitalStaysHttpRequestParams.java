@@ -1,6 +1,12 @@
 package pl.mzlnk.emergencyspot.service.network.requests;
 
-public class RetrieveHospitalStaysHttpRequestParams extends BaseHttpRequestParams {
+import com.google.gson.reflect.TypeToken;
+
+import java.util.List;
+
+import pl.mzlnk.emergencyspot.model.hospitalstay.HospitalStayDto;
+
+public class RetrieveHospitalStaysHttpRequestParams extends BaseHttpRequestParams<HospitalStayDto> {
 
     @Override
     public int getRequestMethod() {
@@ -9,6 +15,18 @@ public class RetrieveHospitalStaysHttpRequestParams extends BaseHttpRequestParam
 
     @Override
     public String getUrl() {
-        return null;
+        return super.getUrl() + "/stays/me";
     }
+
+    @Override
+    public boolean isAuthorized() {
+        return true;
+    }
+
+    @Override
+    public TypeToken<List<HospitalStayDto>> receivedDataTypeToken() {
+        return new TypeToken<List<HospitalStayDto>>() {
+        };
+    }
+
 }

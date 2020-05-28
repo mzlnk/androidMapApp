@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 import pl.mzlnk.emergencyspot.R;
 import pl.mzlnk.emergencyspot.model.hospital.HospitalDto;
+import pl.mzlnk.emergencyspot.ui.fragment.HospitalDetailsFragment;
 import pl.mzlnk.emergencyspot.ui.fragment.HospitalWardsOverviewFragment;
 import pl.mzlnk.emergencyspot.ui.view.list.HospitalListItemView;
 
@@ -30,7 +31,7 @@ public class HospitalsOverviewViewProvider implements ViewProvider<HospitalDto, 
                     view.setOnClickListener(v -> {
                         fragmentManager
                                 .beginTransaction()
-                                .replace(R.id.a_main_fragment_container, HospitalWardsOverviewFragment.newInstance(hospital.getId()))
+                                .replace(R.id.a_main_fragment_container, HospitalDetailsFragment.newInstance(hospital.getId()))
                                 .commit();
                     });
 
