@@ -11,7 +11,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import pl.mzlnk.emergencyspot.R;
 import pl.mzlnk.emergencyspot.model.hospitalstay.HospitalStayDto;
+import pl.mzlnk.emergencyspot.ui.fragment.HospitalStayDetailsFragment;
 import pl.mzlnk.emergencyspot.ui.view.list.HospitalStayListItemView;
 
 public class HospitalStaysOverviewViewProvider implements ViewProvider<HospitalStayDto, Long, HospitalStayListItemView> {
@@ -27,7 +29,10 @@ public class HospitalStaysOverviewViewProvider implements ViewProvider<HospitalS
                     view.setDetails(stay);
 
                     view.setOnClickListener(v -> {
-                        Toast.makeText(context, "click!", Toast.LENGTH_SHORT).show();
+                        fragmentManager
+                                .beginTransaction()
+                                .replace(R.id.a_main_fragment_container, HospitalStayDetailsFragment.newInstance(stay.getId()))
+                                .commit();
                     });
 
                     return new AbstractMap.SimpleEntry<>(1L, view);

@@ -9,16 +9,17 @@ import java.util.Map;
 
 import lombok.AllArgsConstructor;
 import pl.mzlnk.emergencyspot.model.hospitalreview.HospitalReviewDetailsDto;
+import pl.mzlnk.emergencyspot.model.hospitalstay.HospitalStayDetailsDto;
 
 @AllArgsConstructor
-public class UpdateHospitalStayReviewHttpRequestParams extends BaseHttpRequestParams<HospitalReviewDetailsDto> {
+public class CreateHospitalStayReviewHttpRequestParams extends BaseHttpRequestParams<HospitalReviewDetailsDto> {
 
-    private Long hospitalReviewId;
-    private Double newRating;
+    private Long hospitalStayId;
+    private Double rating;
 
     @Override
     public int getRequestMethod() {
-        return Request.Method.PUT;
+        return Request.Method.POST;
     }
 
     @Override
@@ -27,17 +28,17 @@ public class UpdateHospitalStayReviewHttpRequestParams extends BaseHttpRequestPa
     }
 
     @Override
-    public Class<HospitalReviewDetailsDto> receivedDataClass() {
-        return HospitalReviewDetailsDto.class;
+    public String getRequestBody() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("hospitalStayId", this.hospitalStayId);
+        map.put("rating", this.rating);
+
+        return new JSONObject(map).toString();
     }
 
     @Override
-    public String getRequestBody() {
-        Map<String, Object> map = new HashMap<>();
-        map.put("hospitalReviewId", this.hospitalReviewId);
-        map.put("newRating", this.newRating);
-
-        return new JSONObject(map).toString();
+    public Class<HospitalReviewDetailsDto> receivedDataClass() {
+        return HospitalReviewDetailsDto.class;
     }
 
 }

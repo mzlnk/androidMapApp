@@ -4,8 +4,9 @@ import lombok.Data;
 import pl.mzlnk.emergencyspot.model.hospitalward.HospitalWardDto;
 
 @Data
-public class HospitalReviewDto {
+public class HospitalReviewDetailsDto {
 
+    private Long id;
     private HospitalWardDto ward;
     private Double rating;
 

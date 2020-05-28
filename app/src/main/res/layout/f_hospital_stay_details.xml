@@ -1,14 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context=".ui.fragment.HospitalStayDetailsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <pl.mzlnk.emergencyspot.ui.view.title.TitleLabelView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="hospital stay details" />
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:layout_weight="0"
+        app:label="@string/title_label_hospital_stay_details" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:paddingStart="40dp" >
+
+        <TextView
+            android:id="@+id/f_hospital_stay_details_text_hospital_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/questrial_regular_pl"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="szpital"
+            android:fontFamily="@font/questrial_regular_pl"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/f_hospital_stay_details_text_ward_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="20dp"
+            android:text=""
+            android:fontFamily="@font/questrial_regular_pl"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="oddział"
+            android:fontFamily="@font/questrial_regular_pl"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/f_hospital_stay_details_text_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="20dp"
+            android:text=""
+            android:fontFamily="@font/questrial_regular_pl"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="czas pobytu"
+            android:fontFamily="@font/questrial_regular_pl"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <RatingBar
+        android:id="@+id/f_hospital_stay_details_bar_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="3"
+        android:layout_marginTop="75dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Twoja ocena"
+        android:fontFamily="@font/questrial_regular_pl"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp" />
+
+    <pl.mzlnk.emergencyspot.ui.view.button.NoIconButton
+        android:id="@+id/f_hospital_stay_details_btn_submit_rate"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="40dp"
+        app:label="@string/btn_wards_submit_rate"
+        app:labelSize="11dp" />
+
+</LinearLayout>
