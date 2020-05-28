@@ -16,7 +16,7 @@ public class HospitalWardListItemView extends BaseListItemView {
     }
 
     public void setDetails(HospitalWardDto hospitalWardDto) {
-        super.setTitle(hospitalWardDto.getWardType().name());
+        super.setTitle(hospitalWardDto.getWardType().getName());
         super.setSubtitle("");
         super.setButtonLabel("szczegóły");
     }

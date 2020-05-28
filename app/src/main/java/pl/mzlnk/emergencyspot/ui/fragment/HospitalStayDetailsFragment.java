@@ -109,7 +109,7 @@ public class HospitalStayDetailsFragment extends BaseNetworkDataReceiverFragment
         this.hospitalStayDetails = data;
 
         this.hospitalName.setText(data.getWard().getHospital().getName());
-        this.wardType.setText(data.getWard().getWardType().name());
+        this.wardType.setText(data.getWard().getWardType().getName());
 
         Log.d("network", "date from: " + data.getDateFrom().getTime());
         Log.d("network", "date to: " + data.getDateTo().getTime());

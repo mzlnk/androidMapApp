@@ -70,7 +70,7 @@ public class HospitalWardDetailsFragment extends BaseNetworkDataReceiverFragment
     @Override
     public void onDataReceivedFromNetwork(HospitalWardDetailsDto data) {
         this.hospitalName.setText(data.getHospital().getName());
-        this.wardType.setText(data.getWardType().name());
+        this.wardType.setText(data.getWardType().getName());
         this.currentPatients.setText(String.format("%d / %d", (data.getCurrentPatients() != null ? data.getCurrentPatients() : 0), data.getCapacity()));
         this.averageRating.setRating(data.getAverageRating().floatValue());
 
