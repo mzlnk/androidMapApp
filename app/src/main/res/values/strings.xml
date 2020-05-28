@@ -9,11 +9,11 @@
 
     <string name="empty"> </string>
 
-    <string name="menu_add_patient">add patient</string>
-    <string name="menu_hospitals">hospitals</string>
-    <string name="menu_map">map</string>
-    <string name="menu_hospital_stay">stays</string>
-    <string name="menu_profile">profile</string>
+    <string name="menu_add_patient">dodaj pacjenta</string>
+    <string name="menu_hospitals">szpitale</string>
+    <string name="menu_map">mapa</string>
+    <string name="menu_hospital_stay">pobyty</string>
+    <string name="menu_profile">profil</string>
 
     <string name="btn_sign_in">Zaloguj się</string>
     <string name="btn_sign_out">Wyloguj się</string>

@@ -9,12 +9,15 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Calendar;
 import java.util.Map;
 
 import pl.mzlnk.emergencyspot.service.network.requests.HttpRequestParams;
+import pl.mzlnk.emergencyspot.utils.gson.CalendarTypeAdapter;
 
 public class HttpObjectRequest<T> extends Request<T> {
 
@@ -65,7 +68,9 @@ public class HttpObjectRequest<T> extends Request<T> {
 
     @Override
     protected Response<T> parseNetworkResponse(NetworkResponse response) {
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder()
+                .registerTypeHierarchyAdapter(Calendar.class, new CalendarTypeAdapter())
+                .create();
 
         try {
             String json = new String(

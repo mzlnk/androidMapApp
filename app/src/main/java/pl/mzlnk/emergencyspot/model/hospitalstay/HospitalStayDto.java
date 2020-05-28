@@ -8,6 +8,7 @@ import pl.mzlnk.emergencyspot.model.hospitalward.HospitalWardDto;
 @Data
 public class HospitalStayDto {
 
+    private Long id;
     private HospitalWardDto ward;
 
     private Calendar dateFrom;

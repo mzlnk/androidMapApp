@@ -1,6 +1,6 @@
 package pl.mzlnk.emergencyspot.service.network.requests;
 
-public class RetriveHospitalStayDetailsHttpRequestParams extends BaseHttpRequestParams {
+public class RetrieveHospitalStayDetailsHttpRequestParams extends BaseHttpRequestParams {
     @Override
     public int getRequestMethod() {
         return 0;
