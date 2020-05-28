@@ -6,6 +6,7 @@ import pl.mzlnk.emergencyspot.model.hospital.HospitalDto;
 @Data
 public class HospitalWardDto {
 
+    private Long id;
     private HospitalDto hospital;
     private HospitalWardEnum wardType;
 
