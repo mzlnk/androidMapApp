@@ -20,6 +20,7 @@
     <string name="btn_wards_list">lista oddziałów</string>
     <string name="btn_wards_submit_rate">prześlij ocenę</string>
     <string name="btn_apply">zastosuj</string>
+    <string name="btn_details">szczegóły</string>
 
     <string name="title_label_hospitals">Szpitale</string>
     <string name="title_label_hospital_wards">Oddziały szpitalne</string>
