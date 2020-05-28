@@ -9,7 +9,7 @@ import java.util.List;
 public abstract class BaseHttpRequestParams<T> implements HttpRequestParams<T> {
 
     @Override
-    public JSONObject getRequestBody() {
+    public String getRequestBody() {
         return null;
     }
 

@@ -1,6 +1,7 @@
 package pl.mzlnk.emergencyspot.service.network;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -32,7 +33,11 @@ public class NetworkService {
                                          Response.Listener<T> onSuccessListener,
                                          Response.ErrorListener errorListener) {
 
-        requestQueue.add(new HttpObjectRequest<>(requestParams, onSuccessListener, errorListener));
+        HttpObjectRequest<T> objectRequest = new HttpObjectRequest<T>(requestParams, onSuccessListener, errorListener);
+        Log.d("network", "content-type: " + objectRequest.getBodyContentType());
+        Log.d("network", "request-body: " + new String(objectRequest.getBody()));
+
+        requestQueue.add(objectRequest);
     }
 
     public <T> void makeAuthorizedRequestForObject(HttpRequestParams<T> requestParams,
@@ -43,14 +48,20 @@ public class NetworkService {
         Map<String, String> headers = new HashMap<>();
         headers.put("Authorization", "Bearer: " + authUser.getToken());
 
-        requestQueue.add(new HttpObjectRequest<>(requestParams, onSuccessListener, errorListener, headers));
+        HttpObjectRequest<T> objectRequest = new HttpObjectRequest<>(requestParams, onSuccessListener, errorListener, headers);
+        Log.d("network", "content-type: " + objectRequest.getBodyContentType());
+
+        requestQueue.add(objectRequest);
     }
 
     public <T> void makeRequestForList(HttpRequestParams<T> requestParams,
                                        Response.Listener<List<T>> onSuccessListener,
                                        Response.ErrorListener errorListener) {
 
-        requestQueue.add(new HttpListRequest<>(requestParams, onSuccessListener, errorListener));
+        HttpListRequest<T> listRequest = new HttpListRequest<>(requestParams, onSuccessListener, errorListener);
+        Log.d("network", "content-type: " + listRequest.getBodyContentType());
+
+        requestQueue.add(listRequest);
     }
 
     public <T> void makeAuthorizedRequestForList(HttpRequestParams<T> requestParams,
@@ -61,7 +72,10 @@ public class NetworkService {
         Map<String, String> headers = new HashMap<>();
         headers.put("Authorization", "Bearer: " + authUser.getToken());
 
-        requestQueue.add(new HttpListRequest<>(requestParams, onSuccessListener, errorListener, headers));
+        HttpListRequest<T> listRequest = new HttpListRequest<>(requestParams, onSuccessListener, errorListener, headers);
+        Log.d("network", "content-type: " + listRequest.getBodyContentType());
+
+        requestQueue.add(listRequest);
     }
 
 }

@@ -50,6 +50,12 @@ public class HttpListRequest<T> extends Request<List<T>> {
     }
 
     @Override
+    public String getBodyContentType() {
+        return "application/json";
+    }
+
+
+    @Override
     protected void deliverResponse(List<T> response) {
         this.onSuccessListener.onResponse(response);
     }

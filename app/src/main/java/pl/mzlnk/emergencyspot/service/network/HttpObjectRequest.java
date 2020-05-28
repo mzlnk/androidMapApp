@@ -22,6 +22,7 @@ public class HttpObjectRequest<T> extends Request<T> {
     private final Response.Listener<T> onSuccessListener;
 
     private final Map<String, String> headers;
+    private final String requestBody;
 
     public HttpObjectRequest(HttpRequestParams<T> requestParams,
                              Response.Listener<T> onSuccessListener,
@@ -39,11 +40,22 @@ public class HttpObjectRequest<T> extends Request<T> {
         this.clazz = requestParams.receivedDataClass();
         this.onSuccessListener = onSuccessListener;
         this.headers = headers;
+        this.requestBody = requestParams.getRequestBody();
     }
 
     @Override
     public Map<String, String> getHeaders() throws AuthFailureError {
         return headers != null ? headers : super.getHeaders();
+    }
+
+    @Override
+    public String getBodyContentType() {
+        return "application/json";
+    }
+
+    @Override
+    public byte[] getBody() {
+        return this.requestBody.getBytes();
     }
 
     @Override

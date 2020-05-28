@@ -2,8 +2,6 @@ package pl.mzlnk.emergencyspot.service.network.requests;
 
 import com.google.gson.reflect.TypeToken;
 
-import org.json.JSONObject;
-
 import java.util.List;
 
 
@@ -13,7 +11,7 @@ public interface HttpRequestParams<T> {
 
     String getUrl();
 
-    JSONObject getRequestBody();
+    String getRequestBody();
 
     boolean isAuthorized();
 
