@@ -99,4 +99,13 @@
         android:layout_marginTop="10dp"
         android:textSize="15sp" />
 
+    <pl.mzlnk.emergencyspot.ui.view.button.NoIconButton
+        android:id="@+id/f_hospital_ward_details_btn_new_hospital_stay"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="40dp"
+        app:label="@string/btn_new_hospital_stay"
+        android:visibility="gone"
+        app:labelSize="11dp" />
+
 </LinearLayout>

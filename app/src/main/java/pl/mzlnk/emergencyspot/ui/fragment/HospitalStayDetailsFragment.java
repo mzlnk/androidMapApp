@@ -84,6 +84,7 @@ public class HospitalStayDetailsFragment extends BaseNetworkDataReceiverFragment
                     newReview -> {
                         this.hospitalStayDetails.setReview(newReview);
                         this.rating.setRating(newReview.getRating().floatValue());
+                        Toast.makeText(getContext(), "Ocena została zapisana", Toast.LENGTH_SHORT).show();
                     },
                     error -> Toast.makeText(getContext(), "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show(),
                     app.userService.getAuthUser()

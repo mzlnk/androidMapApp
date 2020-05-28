@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="270dp"
+    android:layout_height="400dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/d_dialog_bg">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/questrial_regular_pl"
+        android:textSize="18dp"
+        android:text="Dodaj pobyt"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/d_new_hospital_stay_text_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/questrial_regular_pl"
+        android:textSize="18dp"
+        android:text="Szpital 1"
+        android:textAlignment="center"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:id="@+id/d_new_hospital_stay_text_ward_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/questrial_regular_pl"
+        android:textSize="14dp"
+        android:text="(kardiologia)"
+        android:textAlignment="center"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/questrial_regular_pl"
+        android:textSize="12dp"
+        android:text="oddział/szpital"
+        android:textAlignment="center"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:id="@+id/d_new_hospital_stay_text_date_from"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/questrial_regular_pl"
+        android:textSize="18dp"
+        android:text="[kliknij, aby wybrać]"
+        android:textAlignment="center"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/questrial_regular_pl"
+        android:textSize="12dp"
+        android:text="pobyt od"
+        android:textAlignment="center"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:id="@+id/d_new_hospital_stay_text_date_to"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/questrial_regular_pl"
+        android:textSize="18dp"
+        android:text="[kliknij, aby wybrać]"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/questrial_regular_pl"
+        android:textSize="12dp"
+        android:text="pobyt do"
+        android:textAlignment="center"
+        android:layout_marginTop="5dp" />
+
+    <pl.mzlnk.emergencyspot.ui.view.button.NoIconButton
+        android:id="@+id/d_new_hospital_stay_submit"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="40dp"
+        app:label="@string/btn_submit"
+        app:labelSize="11dp" />
+
+</LinearLayout>

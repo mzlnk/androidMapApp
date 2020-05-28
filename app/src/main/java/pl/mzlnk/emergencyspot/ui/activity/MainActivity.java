@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     private void addMenuItemListeners() {
         this.menuBar.setHospitalsItemOnClickListener(view -> showFragment(new HospitalsOverviewFragment()));
         this.menuBar.setMapItemOnClickListener(view -> showFragment(new MapOverviewFragment()));
-        this.menuBar.setAddPatientItemOnClickListener(view -> showFragment(new AddHospitalPatientFragment()));
 
         this.menuBar.setHospitalStaysItemOnClickListener(view -> {
             if(app.userService.isUserSignedIn()) {
