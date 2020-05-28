@@ -18,6 +18,11 @@
         <attr name="icon" />
     </declare-styleable>
 
+    <declare-styleable name="FilterItem">
+        <attr name="label" />
+        <attr name="icon" />
+    </declare-styleable>
+
     <declare-styleable name="NoIconButton">
         <attr name="label" />
         <attr name="labelSize" />

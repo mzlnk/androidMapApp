@@ -19,6 +19,7 @@
     <string name="btn_sign_out">wyloguj się</string>
     <string name="btn_wards_list">lista oddziałów</string>
     <string name="btn_wards_submit_rate">prześlij ocenę</string>
+    <string name="btn_apply">zastosuj</string>
 
     <string name="title_label_hospitals">Szpitale</string>
     <string name="title_label_hospital_wards">Oddziały szpitalne</string>
@@ -29,6 +30,7 @@
     <string name="title_label_profile_overview">Twój profil</string>
 
     <string name="d_user_sign_in_title">Zaloguj się</string>
+    <string name="d_hospitals_filter_title">Zastosuj filtry</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

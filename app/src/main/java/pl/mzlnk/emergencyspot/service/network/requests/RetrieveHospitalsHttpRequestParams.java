@@ -4,10 +4,12 @@ import com.android.volley.Request;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import lombok.AllArgsConstructor;
 import pl.mzlnk.emergencyspot.model.hospital.HospitalDto;
 import pl.mzlnk.emergencyspot.model.hospital.HospitalParamsDto;
+import pl.mzlnk.emergencyspot.model.hospitalward.HospitalWardEnum;
 
 @AllArgsConstructor
 public class RetrieveHospitalsHttpRequestParams extends BaseHttpRequestParams<HospitalDto> {
@@ -21,12 +23,57 @@ public class RetrieveHospitalsHttpRequestParams extends BaseHttpRequestParams<Ho
 
     @Override
     public String getUrl() {
-        return "http://192.168.0.21:5000/hospitals/";
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("http://192.168.0.21:5000/hospitals?");
+
+        if (hospitalParams.getName() != null) {
+            sb.append("name=")
+                    .append(hospitalParams.getName())
+                    .append("&");
+        }
+
+        if (hospitalParams.getLongitude() != null) {
+            sb.append("longitude=")
+                    .append(hospitalParams.getLongitude())
+                    .append("&");
+        }
+
+        if (hospitalParams.getLatitude() != null) {
+            sb.append("latitude=")
+                    .append(hospitalParams.getLatitude())
+                    .append("&");
+        }
+
+        if (hospitalParams.getCity() != null) {
+            sb.append("city=")
+                    .append(hospitalParams.getCity())
+                    .append("&");
+        }
+
+        if (hospitalParams.getCountry() != null) {
+            sb.append("country=")
+                    .append(hospitalParams.getCountry())
+                    .append("&");
+        }
+
+        if (hospitalParams.getWards() != null && !hospitalParams.getWards().isEmpty()) {
+            sb.append("wards=")
+                    .append(hospitalParams
+                            .getWards()
+                            .stream()
+                            .map(HospitalWardEnum::name)
+                            .collect(Collectors.joining(","))
+                    );
+        }
+
+        return sb.toString();
     }
 
     @Override
     public TypeToken<List<HospitalDto>> receivedDataTypeToken() {
-        return new TypeToken<List<HospitalDto>>() {};
+        return new TypeToken<List<HospitalDto>>() {
+        };
     }
 
 }
