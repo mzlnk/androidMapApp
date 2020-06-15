@@ -15,6 +15,7 @@ import pl.mzlnk.emergencyspot.model.hospitalstay.HospitalStayDetailsDto;
 public class CreateHospitalStayReviewHttpRequestParams extends BaseHttpRequestParams<HospitalReviewDetailsDto> {
 
     private Long hospitalStayId;
+    private Long hospitalWardId;
     private Double rating;
 
     @Override
@@ -24,13 +25,14 @@ public class CreateHospitalStayReviewHttpRequestParams extends BaseHttpRequestPa
 
     @Override
     public String getUrl() {
-        return super.getUrl() + "/reviews/";
+        return super.getUrl() + "/reviews";
     }
 
     @Override
     public String getRequestBody() {
         Map<String, Object> map = new HashMap<>();
         map.put("hospitalStayId", this.hospitalStayId);
+        map.put("hospitalWardId", this.hospitalWardId);
         map.put("rating", this.rating);
 
         return new JSONObject(map).toString();

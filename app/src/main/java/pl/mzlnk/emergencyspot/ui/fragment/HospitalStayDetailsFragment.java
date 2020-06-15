@@ -75,6 +75,7 @@ public class HospitalStayDetailsFragment extends BaseNetworkDataReceiverFragment
             } else {
                 requestParams = new CreateHospitalStayReviewHttpRequestParams(
                         this.hospitalStayDetails.getId(),
+                        this.hospitalStayDetails.getWard().getId(),
                         (double) this.rating.getRating()
                 );
             }

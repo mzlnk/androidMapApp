@@ -11,6 +11,8 @@ import pl.mzlnk.emergencyspot.ui.asynctask.HospitalStaysOverviewLoadViewsTask;
 import pl.mzlnk.emergencyspot.ui.asynctask.LoadViewsTask;
 import pl.mzlnk.emergencyspot.ui.view.list.HospitalStayListItemView;
 
+import static pl.mzlnk.emergencyspot.EmergencySpotApplication.app;
+
 
 public class HospitalStaysOverviewFragment extends BaseNetworkDataLoadViewsReceiverFragment<HospitalStayDto, Long, HospitalStayListItemView> {
 
@@ -38,7 +40,7 @@ public class HospitalStaysOverviewFragment extends BaseNetworkDataLoadViewsRecei
 
     @Override
     public HttpRequestParams<HospitalStayDto> httpRequestParams() {
-        return new RetrieveHospitalStaysHttpRequestParams();
+        return new RetrieveHospitalStaysHttpRequestParams(app.userService.getAuthUser());
     }
 
 }

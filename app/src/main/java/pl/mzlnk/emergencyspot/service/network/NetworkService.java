@@ -47,10 +47,8 @@ public class NetworkService {
                                                    Response.ErrorListener errorListener,
                                                    AuthUserDto authUser) {
 
-        Map<String, String> headers = new HashMap<>();
-        headers.put("Authorization", "Bearer " + authUser.getToken());
 
-        HttpObjectRequest<T> objectRequest = new HttpObjectRequest<>(requestParams, onSuccessListener, errorListener, headers);
+        HttpObjectRequest<T> objectRequest = new HttpObjectRequest<>(requestParams, onSuccessListener, errorListener);
         Log.d("network", "content-type: " + objectRequest.getBodyContentType());
 
         requestQueue.add(objectRequest);
@@ -72,11 +70,7 @@ public class NetworkService {
                                                  Response.ErrorListener errorListener,
                                                  AuthUserDto authUser) {
 
-        Map<String, String> headers = new HashMap<>();
-        Log.d("network", "attaching token: " + Optional.ofNullable(authUser.getToken()).orElse("null!"));
-        headers.put("Authorization", "Bearer " + authUser.getToken());
-
-        HttpListRequest<T> listRequest = new HttpListRequest<>(requestParams, onSuccessListener, errorListener, headers);
+        HttpListRequest<T> listRequest = new HttpListRequest<>(requestParams, onSuccessListener, errorListener);
         Log.d("network", "content-type: " + listRequest.getBodyContentType());
         Log.d("network", "auth header: " + listRequest.getHeaders().get("Authorization"));
 

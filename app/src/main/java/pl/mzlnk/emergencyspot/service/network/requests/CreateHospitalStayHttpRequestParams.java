@@ -1,5 +1,7 @@
 package pl.mzlnk.emergencyspot.service.network.requests;
 
+import android.util.Log;
+
 import com.android.volley.Request;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;

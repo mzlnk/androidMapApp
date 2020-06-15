@@ -8,11 +8,8 @@ import java.util.List;
 
 public abstract class BaseHttpRequestParams<T> implements HttpRequestParams<T> {
 
-//    private static final String HOST = "emergency-spot-api.eu-central-1.elasticbeanstalk.com";
-//    private static final String PORT = "80";
-
-    private static final String HOST = "192.168.0.21";
-    private static final String PORT = "5000";
+    private static final String HOST = "192.168.0.151";
+    private static final String PORT = "9000";
 
     @Override
     public String getRequestBody() {

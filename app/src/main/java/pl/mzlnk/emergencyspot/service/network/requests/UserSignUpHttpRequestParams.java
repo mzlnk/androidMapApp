@@ -39,7 +39,7 @@ public class UserSignUpHttpRequestParams extends BaseHttpRequestParams<Void> {
 
     @Override
     public String getUrl() {
-        return super.getUrl() + "/users/signup";
+        return super.getUrl() + "/user/signup";
     }
 
 }

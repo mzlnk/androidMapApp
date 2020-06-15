@@ -23,7 +23,7 @@ public class UserSignInHttpRequestParams extends BaseHttpRequestParams<AuthUserD
 
     @Override
     public String getUrl() {
-        return super.getUrl() + "/token/generate";
+        return super.getUrl() + "/user/signin";
     }
 
     @Override

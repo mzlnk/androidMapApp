@@ -54,7 +54,7 @@ public class ProfileOverviewFragment extends BaseNetworkDataReceiverFragment<Use
 
     @Override
     public HttpRequestParams<UserDto> httpRequestParams() {
-        return new RetrieveUserProfileHttpRequestParams();
+        return new RetrieveUserProfileHttpRequestParams(app.userService.getAuthUser().getUsername());
     }
 
     @Override

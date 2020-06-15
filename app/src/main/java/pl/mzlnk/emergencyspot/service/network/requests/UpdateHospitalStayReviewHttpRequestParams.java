@@ -23,7 +23,7 @@ public class UpdateHospitalStayReviewHttpRequestParams extends BaseHttpRequestPa
 
     @Override
     public String getUrl() {
-        return super.getUrl() + "/reviews/";
+        return super.getUrl() + "/reviews";
     }
 
     @Override
