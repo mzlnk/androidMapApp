@@ -72,6 +72,9 @@ public class HospitalWardDetailsFragment extends BaseNetworkDataReceiverFragment
         this.hospitalName.setText(data.getHospital().getName());
         this.wardType.setText(data.getWardType().getName());
         this.currentPatients.setText(String.format("%d / %d", (data.getCurrentPatients() != null ? data.getCurrentPatients() : 0), data.getCapacity()));
+
+        // Toast.makeText(getContext(), "R: " + data.getAverageRating().floatValue(), Toast.LENGTH_SHORT).show();
+
         this.averageRating.setRating(data.getAverageRating().floatValue());
 
         this.newHospitalStay.setOnClickListener(view -> {
